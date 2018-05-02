@@ -24,8 +24,12 @@ protected:
 	int Age;
 	vector<Post> Posts;
 	vector<string> Friends;
+	vector<string> Requests; //new member added to handle friend requests for each user
+				 //(one may have multiple requests)
 public:
-	//User(string,string,string,int);
+	User(string name, string mail, string password, int age);   //constructor added for possible purposes
+	~User(string name, string mail, string password, int age);  //destructor added for possible purposes
+	
 	void Like_Post(int id);		 //Fiky
 
 	void Mutual_Friends();          //Fiky // i think it should be added to the System class 
@@ -44,11 +48,28 @@ public:
 
 	void Edit_User_Profile(string, string);
 
-	void Browse_User_Friends(string mail);
+	//void Browse_User_Friends(string mail); //We should pass a user to get his friends not an e-mail
+	
+	void Browse_User_Friends(User current_profile_opened); // we pass a user and import his friends
 
 	void Login(string name, string password);
 
 	void Register(string name, string mail, string password, int age);
+	
+	// getters just in case
+	string get_name();
+	
+	string get_mail();
+	
+	string get_password();
+	
+	int get_age();
+	
+	string get_post(); 
+	
+	string get_friends();
+	
+	string get_requests();
 	
 };
 
