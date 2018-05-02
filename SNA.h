@@ -26,13 +26,13 @@ protected:
 	vector<string>Friends ;
 public:
 	//User(string,string,string,int);
-	void LikePost(int id)         ;
+	void LikePost(int id)         ;		 //Fiky
 
-	void MutualFriends()          ;          // i think it should be added to the System class
+	void MutualFriends()          ;          //Fiky // i think it should be added to the System class 
 
-	void AddFriend(string mail)   ;
+	void AddFriend(string mail)   ;		 //Fiky
 
-	void AcceptFriend(string mail);
+	void AcceptFriend(string mail);		 //Fiky
 
 	void Search(string name)      ;          // i think it should be added to the System class
 
