@@ -48,7 +48,7 @@ public:
 
 	void Login(string name , string password);
 
-	void Register(string,string,string,int)  ;
+	void Register(string name ,string mail ,string password,int age)  ;
 	
 };
 
