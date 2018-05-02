@@ -11,44 +11,44 @@ using namespace std;
 typedef struct
 {
 	string text;
-	int likes  ;
-	int id     ;
+	int likes;
+	int id;
 }Post;
 /*----------------------------------------------------*/
 class User
 {
 protected:
-	string Name    ;
-	string Mail    ;
+	string Name;
+	string Mail;
 	string Password;
-	int    Age     ;
-	vector<Post>Posts     ;
-	vector<string>Friends ;
+	int Age;
+	vector<Post> Posts;
+	vector<string> Friends;
 public:
 	//User(string,string,string,int);
-	void LikePost(int id)         ;		 //Fiky
+	void Like_Post(int id);		 //Fiky
 
-	void MutualFriends()          ;          //Fiky // i think it should be added to the System class 
+	void Mutual_Friends();          //Fiky // i think it should be added to the System class 
 
-	void AddFriend(string mail)   ;		 //Fiky
+	void Add_Friend(string mail);		 //Fiky
 
-	void AcceptFriend(string mail);		 //Fiky
+	void Accept_Friend(string mail);		 //Fiky
 
-	void Search(string name)      ;          // i think it should be added to the System class
+	void Search(string name);          // i think it should be added to the System class
 
-	void PostText(string)         ;
+	void Post_Text(string);
 
-	void DeleteProfile()          ;          //assuming he is o his profile page   
+	void Delete_Profile();          //assuming he is o his profile page   
 
-	void ViewUserProfile(string mail)        ;
+	void View_User_Profile(string mail);
 
-	void EditUserProfile(string ,string )    ;
+	void Edit_User_Profile(string, string);
 
-	void BrowseUserFriends(string mail)      ;
+	void Browse_User_Friends(string mail);
 
-	void Login(string name , string password);
+	void Login(string name, string password);
 
-	void Register(string name ,string mail ,string password,int age)  ;
+	void Register(string name, string mail, string password, int age);
 	
 };
 
