@@ -38,15 +38,18 @@ public:
 
 	void PostText(string)         ;
 
+	void DeleteProfile()          ;          //assuming he is o his profile page   
+
 	void ViewUserProfile(string mail)        ;
 
-	void EditUserProfile(string mail)        ;
+	void EditUserProfile(string ,string )    ;
 
 	void BrowseUserFriends(string mail)      ;
 
 	void Login(string name , string password);
 
 	void Register(string,string,string,int)  ;
+	
 };
 
 
