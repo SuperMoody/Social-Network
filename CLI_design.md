@@ -77,4 +77,22 @@ Mail: mahmoudhamdy.eeng@gmail.com
 password: hakuna_msh_matata
 
 
+- Switch User
+Note: nothing will be prompted, you must log in manually
+by using Login command, the software always stars as user mode
+so, nothing will be prompted unless you change to admin mode. 
+
+
+```
+
+## These lines are still in design process:
+In home.txt:
+```shell
+- Like <mail> <id>
+- Like mody_nokta@yahoo.com 4
+```
+In profile.txt:
+```shell
+- Like <user> <id>
+- Like current_profile_opened 2
 ```
