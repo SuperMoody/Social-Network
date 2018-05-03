@@ -44,17 +44,17 @@ public:
 
 	void Delete_Profile();          //assuming he is o his profile page   
 
-	void View_User_Profile(string mail);
+	void View_User_Profile(string mail); //hamdy
 
-	void Edit_User_Profile(string, string);
+	void Edit_User_Profile(string, string); //hamdy
 
 	//void Browse_User_Friends(string mail); //We should pass a user to get his friends not an e-mail
 	
-	void Browse_User_Friends(User current_profile_opened); // we pass a user and import his friends
+	void Browse_User_Friends(User current_profile_opened); // we pass a user and import his friends //hamdy
 
-	void Login(string name, string password);
+	void Login(string name, string password);   //hamdy
 
-	void Register(string name, string mail, string password, int age);
+	void Register(string name, string mail, string password, int age); //hamdy
 	
 	// getters just in case
 	string get_name();
