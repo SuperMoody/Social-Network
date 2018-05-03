@@ -7,3 +7,9 @@
 ```
 
 ## Examples:
+### Notes:
+    - -    stands for command
+    - =    stands for system interaction
+    - ( )  stands for an immediate action taken by the user
+    
+- Register
