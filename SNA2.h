@@ -73,19 +73,38 @@ public:
 
 	void Accept_Friend(char* mail,char*name);
 
-	void Search(string name)      ;          // i think it should be added to the System class
+	void Search(string name);          // i think it should be added to the System class
 
-	void PostText(string)         ;
+	void Post_Text(string);
 
-	void ViewUserProfile(string mail)        ;
+	void Delete_Profile();          //assuming he is o his profile page   
 
-	void EditUserProfile(string mail)        ;
+	void View_User_Profile(string mail); //hamdy
 
-	void BrowseUserFriends(string mail)      ;
+	void Edit_User_Profile(string, string); //hamdy
 
-	void Login(string name , string password);
+	//void Browse_User_Friends(string mail); //We should pass a user to get his friends not an e-mail
+	
+	void Browse_User_Friends(User current_profile_opened); // we pass a user and import his friends //hamdy
 
-	void Register(string,string,string,int)  ;
+	void Login(string name, string password);   //hamdy
+
+	void Register(string name, string mail, string password, int age); //hamdy
+	
+	// getters just in case
+	string get_name();
+	
+	string get_mail();
+	
+	string get_password();
+	
+	int get_age();
+	
+	string get_post(); 
+	
+	string get_friends();
+	
+	string get_requests();
 /*utilities to deal with files */
 	void Load(string KeyWord , string mail)  ;
 	void Load_Post(char* mail=NULL,vector<Post>*vec=NULL);
