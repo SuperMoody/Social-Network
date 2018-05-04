@@ -46,3 +46,59 @@ public:
 	}
 };
 /*----------------------------------------------------*/
+class User
+{
+public:
+
+	string Name    ;
+
+	string Mail    ;
+
+	string Password;
+
+	int    Age     ;
+
+	vector<Post>Posts     ;
+
+	vector<Friend>Friends ;
+
+	vector<Request>Requests;
+//public:
+	//User(string,string,string,int);
+	void Like_Post(int id,char * mail)       ;
+
+	void Mutual_Friends()          ;          // i think it should be added to the System class
+
+	void Add_Friend(char* mail,char*name)   ;
+
+	void Accept_Friend(char* mail,char*name);
+
+	void Search(string name)      ;          // i think it should be added to the System class
+
+	void PostText(string)         ;
+
+	void ViewUserProfile(string mail)        ;
+
+	void EditUserProfile(string mail)        ;
+
+	void BrowseUserFriends(string mail)      ;
+
+	void Login(string name , string password);
+
+	void Register(string,string,string,int)  ;
+/*utilities to deal with files */
+	void Load(string KeyWord , string mail)  ;
+	void Load_Post(char* mail=NULL,vector<Post>*vec=NULL);
+	void Load_Friends(char* mail=NULL,vector<Friend>*vec=NULL);
+	void Load_Requests(char* mail=NULL) ;
+	void Save(string KeyWord , string mail)  ;
+	void Save_Post(char* mail=NULL,vector<Post>*vec=NULL);
+	void Save_Friends(char* mail=NULL,vector<Friend>*vec=NULL);
+	void Save_Requests(char* mail=NULL) ;
+};
+
+
+
+
+#endif /* SNA_H_ */
+
