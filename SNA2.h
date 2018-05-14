@@ -15,11 +15,19 @@ extern int UNI_ID;           //universal post id number
 /*-----------------------------------------------------*/
 class Post
 {
-public:
+public:                                      //added constructors
 	char mail[70]  ;
 	char text[1000];
 	int likes  ;
 	int id     ;
+	Post(){ }                  
+	Post(char* ma,char* te,int li , int i){
+
+		strcpy(mail,ma);
+		strcpy(text,te);
+		likes=li;
+		id=i;
+	}
 };
 /*----------------------------------------------------*/
 class Friend
