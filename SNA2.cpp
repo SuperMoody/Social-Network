@@ -271,6 +271,78 @@ void User::Accept_Friend(char* mail,char*name){
 	file1.write( reinterpret_cast<char*>(&friend1), sizeof(friend1) );
 
 }
+void User::Post_Text(char* text){
+
+	/*CREATE A  POST && and add it to your posts*/
+	Load_Post();
+	string str=this->Mail;
+	char mail[70];
+	strcpy(mail,str.c_str());
+	Post NewPost(mail,text,0,++ UNI_ID);
+	Posts.push_back(NewPost);
+	Save_Post();
+	/*--------------------------------------------------------*/
+	/*send post to friends*/
+	Load_Friends();
+	for(unsigned int i = 0 ; i<Friends.size(); i++ ){
+		vector<Post>vec;
+		Load_Post(Friends[i].Mail,&vec);
+		Save_Post(Friends[i].Mail,&vec);
+		vec.clear();
+	}
+}
+/*-------------------------------------------------------------------*/
+
+void User::Delete_Profile(){
+		char MAIL[70];
+		strcpy(MAIL,Mail.c_str());
+		Clear_Data(MAIL,(char*)"Posts");
+		Clear_Data(MAIL,(char*)"Friends");
+		Clear_Data(MAIL,(char*)"Requests");
+		Clear_Data(MAIL,(char*)"Authenticate");
+
+}
+
+
+/*--------------------------------------------------------------------*/
+
+void User::Clear_Data(char*mail,char*keyword){
+	string key(keyword);
+	if(key== "Friends"){
+		char file_name[70];
+		string temp(mail);
+		temp=temp.substr(0,temp.find('@'))+"Friends.Dat";
+		strcpy(file_name,temp.c_str());
+		remove(file_name);
+
+	}
+
+	else if(key== "Posts"){
+		char file_name[70];
+		string temp(mail);
+		temp=temp.substr(0,temp.find('@'))+"Postss.Dat";
+		strcpy(file_name,temp.c_str());
+		remove(file_name);
+
+	}
+	else if(key== "Requests"){
+		char file_name[70];
+		string temp(mail);
+		temp=temp.substr(0,temp.find('@'))+"Requests.Dat";
+		strcpy(file_name,temp.c_str());
+		remove(file_name);
+		;
+
+	}
+
+	else if(key== "Authenticate"){
+		char file_name[70];
+		string temp(mail);
+		temp=temp.substr(0,temp.find('@'))+"Authenticate.Dat";
+		strcpy(file_name,temp.c_str());
+		remove(file_name);
+	}
+}
 
 
 
