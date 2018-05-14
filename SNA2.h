@@ -11,7 +11,8 @@
 #include<stdio.h>   //added to use remove and rename system calls (file handling)
 using namespace std;
 /*----------------------------------------------------*/
-
+extern int UNI_ID;           //universal post id number
+/*-----------------------------------------------------*/
 class Post
 {
 public:
