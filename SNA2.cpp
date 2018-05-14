@@ -2,7 +2,7 @@
 /*under testing*/
 void User::Load(string KeyWord , string mail){}
 void User::Save(string KeyWord , string mail){}
-
+int UNI_ID;
 
 
 void User::Load_Post(char* mail,vector<Post>*vec){
