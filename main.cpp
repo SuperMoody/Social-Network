@@ -133,24 +133,24 @@ int main(int argc, char* argv[])
 				cout << "you are not in anyone's profile!" << endl << endl;
 			}
         }
-		else if (command == "ViewProfile")
+	else if (command == "ViewProfile")
+	{
+		if (!profile_viewed)
 		{
-			if (!profile_viewed)
-			{
-				profile_viewed_name.clear();
-			}
-
-			if (logged_in || admin_mode)
-			{
-				string Mail = user_input.substr(user_input.find(" ") + 1);
-				current_user.View_User_Profile(Mail);
-				profile_viewed_name = Mail;
-			}
-			else
-			{
-				cout << "you must login first!" << endl << endl;
-			}
+			profile_viewed_name.clear();
 		}
+
+		if (logged_in || admin_mode)
+		{
+			string Mail = user_input.substr(user_input.find(" ") + 1);
+			current_user.View_User_Profile(Mail);
+			profile_viewed_name = Mail;
+		}
+		else
+		{
+			cout << "you must login first!" << endl << endl;
+		}
+	}
         else if(command == "BrowseFriends")
         {
 			if (profile_viewed)
