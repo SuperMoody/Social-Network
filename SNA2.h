@@ -21,11 +21,12 @@ public:
 	int likes  ;
 	int id     ;
 	Post(void) {}
-	Post(char* mail, char* text, int likes, int id)
+	Post(char* mail, char* text, int likes=0, int id=0)
 	{
 		strcpy_s(this->mail, mail);
 		strcpy_s(this->text, text);
 		this->id = id;
+		this->likes=likes;
 	}
 };
 
