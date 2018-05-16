@@ -1,0 +1,16 @@
+Register
+Login
+Search
+ViewProfile
+EditProfile
+BrowseFriends
+Add
+Accept
+Reject
+DeleteProfile
+Post
+Like
+Switch
+help
+exit
+quit
