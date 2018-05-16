@@ -11,11 +11,12 @@ using namespace std;
 
 // System States
 bool profile_viewed = false;  string profile_viewed_name;
-bool admin_mode = false;
-bool logged_in = false;
 // false: Logged in and staying in home.txt
 //  true: viewed a profile
 // This is useful to be used as a condition in writing specefic commands
+
+bool admin_mode = false;
+bool logged_in = false;
 /////////////////////////////
 
 
