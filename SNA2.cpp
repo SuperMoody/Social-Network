@@ -3,7 +3,7 @@
 void User::Load(string KeyWord , string mail){}
 void User::Save(string KeyWord , string mail){}
 
-int UNI_ID;
+int UNI_ID;    //should be saved in file common for all usuers
 
 void User::Load_Post(char* mail,vector<Post>*vec){
 	char file_name[70];
