@@ -95,7 +95,9 @@ public:
 	void Search(string name);  //atef
 
 	void Post_Text(char* text);		// was: void Post_Text(string);
-
+	
+	void Reject(char* mail,char*name);
+	
 	void Delete_Profile();          
 
 	void Clear_Data(char*mail, char*keyword);
@@ -145,7 +147,7 @@ public:
 	void Save_Post(char* mail=NULL,vector<Post>*vec=NULL);
 	void Save_Friends(char* mail=NULL,vector<Friend>*vec=NULL);
 	void Save_Requests(char* mail=NULL) ;
-
+	void Clear_Data(char* mail,char*keyword)    ;
 };
 
 
