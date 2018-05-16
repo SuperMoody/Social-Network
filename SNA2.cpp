@@ -1,5 +1,5 @@
 #include"SNA.h"
-
+//tested 
 void User::Load(string KeyWord , string mail){}
 void User::Save(string KeyWord , string mail){}
 
