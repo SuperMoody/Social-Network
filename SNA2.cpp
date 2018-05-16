@@ -1,4 +1,10 @@
 #include"SNA.h"
+
+
+///////////////////////////////////////////////////////////////////
+/////////////         Madboly's Part           ////////////////////
+///////////////////////////////////////////////////////////////////
+
 //tested 
 void User::Load(string KeyWord , string mail){}
 void User::Save(string KeyWord , string mail){}
@@ -397,6 +403,209 @@ void User::Clear_Data(char*mail,char*keyword){
 
 
 
+
+
+///////////////////////////////////////////////////////////////////
+/////////////           Hamdy's Part           ////////////////////
+///////////////////////////////////////////////////////////////////
+
+User::User()
+{
+
+}
+User::~User()
+{
+
+}
+
+void User::set_name(string name)
+{
+    this->Name = name;
+}
+
+void User::set_age(int age)
+{
+    this->Age = age;
+}
+
+void User::set_mail(string mail)
+{
+    this->Mail = mail;
+}
+
+void User::set_password(string password)
+{
+    this->Password = password;
+}
+
+string User::get_name()
+{
+    return this->Name;
+}
+
+int User::get_age()
+{
+    return this->Age;
+}
+
+string User::get_mail()
+{
+    return this->Mail;
+}
+
+string User::get_password()
+{
+    return this->Password;
+}
+
+void User::Register(string name, string mail, string password, int age)
+{
+    this->Name = name;
+    this->Mail = mail;
+    this->Password = password;
+    this->Age = age;
+
+	Update_User_Profile();
+}
+
+void User::Login(string mail, string password, bool& login_flag)
+{
+	bool exists = database_search(mail, password);
+	if (exists)
+	{
+		cout << "Logged in successfully";
+		login_flag = true;
+	}
+	else
+	{
+		cout << "wrong mail or password, try again";
+	}
+}
+
+void User::View_User_Profile(string mail)
+{
+	string each_line;
+	ifstream line_reader(mail.substr(0, mail.find("@")) + ".txt");
+	while (getline(line_reader, each_line))
+	{
+		cout << each_line << endl;
+	}
+}
+
+
+void User::Edit_User_Profile()
+{
+	string property;
+	bool property_fulfilled = false;
+	do
+	{
+		cout << "\nwhat you want to change: ";
+		cin >> property;
+		if ((property == "name") || (property == "password") 
+			|| (property == "mail") || (property == "age"))
+		{
+			property_fulfilled = true;
+		}
+		else
+		{
+			cout << "wrong property, write a valid one!";
+		}
+	} while (!property_fulfilled);
+
+	cout << "Enter the new" + property + ": " << endl;
+    if(property == "name")
+    {
+		cin.ignore();
+        string new_name;
+		//cin >> new_name;
+        getline(cin, new_name);
+        set_name(new_name);
+		Update_User_Profile();
+    }
+    else if(property == "age")
+    {
+        int new_age;
+        cin >> new_age;
+        set_age(new_age);
+		Update_User_Profile();
+		cin.ignore();
+    }
+    else if(property == "mail")
+    {
+        string new_mail;
+        cin >> new_mail;
+        set_mail(new_mail);
+		Update_User_Profile();
+		cin.ignore();
+    }
+    else
+    {
+        string new_password;
+        cin >> new_password;
+        set_password(new_password);
+		cin.ignore();
+    }
+	system("cls");
+	View_User_Profile(this->Mail);
+	//cout << property + "changed successfully" << endl << endl;
+}
+
+void User::Update_User_Profile()
+{
+	ofstream profile;
+	profile.open(this->Mail.substr(0, this->Mail.find("@"))+".txt");
+	int name_frame = this->Name.length() + 2;
+	profile << " ";
+	for (int i = 0; i < name_frame; i++)
+	{
+		profile << "=";
+	}
+	profile << endl << "  "+ this->Name +" " << endl;
+	profile << " ";
+	for (int i = 0; i < name_frame; i++)
+	{
+		profile << "=";
+	}
+	profile << "\n\n";
+	profile << " (info)\n  ";
+	profile << "______________________________________\n ";
+	profile << "|                                      |\n ";
+	profile << "| Name: " + this->Name;
+	int sec_line_len = 40 - 8 - this->Name.length();
+	for (int i = 0; i < sec_line_len - 1; i++)
+	{
+		profile << " ";
+	}
+	profile << "|\n ";
+	profile << "|  Age: " + to_string(this->Age);
+	int thrd_line_len = 40 - 8 - to_string(this->Age).length();
+	for (int i = 0; i < thrd_line_len - 1; i++)
+	{
+		profile << " ";
+	}
+	profile << "|\n ";
+	profile << "| Mail: " << this->Mail;
+	int forth_line_len = 40 - 8 - this->Mail.length() - 1;
+	for (int i = 0; i < forth_line_len; i++)
+	{
+		profile << " ";
+	}
+	profile << "|\n ";
+	profile << "|______________________________________|\n\n";
+	profile << " \n\n";
+
+	/** posts layout implementation : undone **/
+}
+
+void User::Browse_User_Friends(string mail)
+{
+	string each_line;
+	ifstream line_reader(mail.substr(0, mail.find("@")) + "_friends.txt");
+	while (getline(line_reader, each_line))
+	{
+		cout << each_line << endl;
+	}
+}
 
 
 
