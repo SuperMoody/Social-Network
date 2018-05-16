@@ -8,28 +8,29 @@
 #include <fstream>
 #include<iomanip>
 #include <string.h>
-#include<stdio.h>   //added to use remove and rename system calls (file handling)
+#include "sysfiles.h"
+
 using namespace std;
-/*----------------------------------------------------*/
-extern int UNI_ID;           //universal post id number
-/*-----------------------------------------------------*/
+
+
 class Post
 {
-public:                                      //added constructors
+public:
 	char mail[70]  ;
 	char text[1000];
 	int likes  ;
 	int id     ;
-	Post(){ }                  
-	Post(char* ma,char* te,int li , int i){
-
-		strcpy(mail,ma);
-		strcpy(text,te);
-		likes=li;
-		id=i;
+	Post(void) {}
+	Post(char* mail, char* text, int likes, int id)
+	{
+		strcpy_s(this->mail, mail);
+		strcpy_s(this->text, text);
+		this->id = id;
 	}
 };
-/*----------------------------------------------------*/
+
+
+
 class Friend
 {
 public:
@@ -37,23 +38,29 @@ public:
 	char Name [50];
 	char Mail [70];
 	Friend(char* name,char* mail){
-		strcpy(Mail,mail);
-		strcpy(Name,name);
+		strcpy_s(Mail,mail);
+		strcpy_s(Name,name);
 		}
 };
-/*----------------------------------------------------*/
+
+
+
 class Request
 {
 public:
-	Request(){};
+	Request(){}
 	char mail[70]  ;
 	char name[50]  ;
 	char text[70] ="would like to be your friend" ;
+
 	Request(char*Mail,char*Name){
-		strcpy(mail,Mail);
-		strcpy(name,Name);
+		strcpy_s(mail,Mail);
+		strcpy_s(name,Name);
 	}
 };
+
+
+
 /*----------------------------------------------------*/
 class User
 {
@@ -72,49 +79,64 @@ public:
 	vector<Friend>Friends ;
 
 	vector<Request>Requests;
+
 //public:
 	//User(string,string,string,int);
-	void Like_Post(int id,char * mail)       ;
+	User();
+	~User();
+	void Like_Post(int id,char * mail);
 
-	void Mutual_Friends()          ;          // i think it should be added to the System class
+	void Mutual_Friends();   //atef    
 
-	void Add_Friend(char* mail,char*name)   ;
+	void Add_Friend(char* mail,char*name);
 
 	void Accept_Friend(char* mail,char*name);
 
-	void Search(string name);          // i think it should be added to the System class
+	void Search(string name);  //atef
 
-	void Post_Text(string);
+	void Post_Text(char* text);		// was: void Post_Text(string);
 
-	void Delete_Profile();          //assuming he is o his profile page   
+	void Delete_Profile();          
+
+	void Clear_Data(char*mail, char*keyword);
 
 	void View_User_Profile(string mail); //hamdy
 
-	void Edit_User_Profile(string, string); //hamdy
+	void Edit_User_Profile(); //hamdy
 
-	//void Browse_User_Friends(string mail); //We should pass a user to get his friends not an e-mail
-	
-	void Browse_User_Friends(User current_profile_opened); // we pass a user and import his friends //hamdy
+	void Update_User_Profile(); //new by hamdy
 
-	void Login(string name, string password);   //hamdy
+	void Browse_User_Friends(string mail); //hamdy
+
+	void Login(string mail, string password, bool& login_flag);   //hamdy
 
 	void Register(string name, string mail, string password, int age); //hamdy
-	
+
+	//setters
+	void set_name(string name);
+
+	void set_age(int age);
+
+	void set_mail(string mail);
+
+	void set_password(string password);
+
 	// getters just in case
 	string get_name();
-	
+
 	string get_mail();
-	
+
 	string get_password();
-	
+
 	int get_age();
-	
-	string get_post(); 
-	
+
+	string get_post();
+
 	string get_friends();
-	
+
 	string get_requests();
 /*utilities to deal with files */
+
 	void Load(string KeyWord , string mail)  ;
 	void Load_Post(char* mail=NULL,vector<Post>*vec=NULL);
 	void Load_Friends(char* mail=NULL,vector<Friend>*vec=NULL);
@@ -123,7 +145,7 @@ public:
 	void Save_Post(char* mail=NULL,vector<Post>*vec=NULL);
 	void Save_Friends(char* mail=NULL,vector<Friend>*vec=NULL);
 	void Save_Requests(char* mail=NULL) ;
-	void Clear_Data(char* mail,char*keyword)    ;
+
 };
 
 
