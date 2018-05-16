@@ -278,7 +278,6 @@ void User::Add_Friend(char* mail,char*name) {
 	file.write( reinterpret_cast<char*>(&request), sizeof(request) );
 
 }
-
 void User::Accept_Friend(char* mail,char*name){
 
 	char file_name[70];
@@ -308,10 +307,22 @@ void User::Accept_Friend(char* mail,char*name){
 
 
 	Friend friend2(name,mail);
+
 	file1.write( reinterpret_cast<char*>(&friend2), sizeof(friend2) );
+	Friends.push_back(friend2);
+	/*-------------------------------------------------------------------*/
+	/*REMOVE THE REQUEST FROM THE MY REQUESTS*/
+	string target(mail);
+	for(int i =0 ; i<Requests.size();i++){
+		string str(Requests[i].mail);
+		if(str==target){
+			Requests.erase(Requests.begin() + i);
+			break;
+		}
 
+	}
+	Save_Requests();
 }
-
 
 void User::Post_Text(char* text){
 
@@ -401,6 +412,19 @@ void User::Clear_Data(char*mail,char*keyword){
 	}
 }
 
+void User::Reject(char* mail,char*name){
+/*REMOVE THE REQUEST FROM THE MY REQUESTS*/
+	string target(mail);
+	for(int i =0 ; i<Requests.size();i++){
+		string str(Requests[i].mail);
+		if(str==target){
+			Requests.erase(Requests.begin() + i);
+			break;
+		}
+
+	}
+	Save_Requests();
+}
 
 
 
