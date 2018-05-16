@@ -147,7 +147,7 @@ public:
 	void Save_Post(char* mail=NULL,vector<Post>*vec=NULL);
 	void Save_Friends(char* mail=NULL,vector<Friend>*vec=NULL);
 	void Save_Requests(char* mail=NULL) ;
-	void Clear_Data(char* mail,char*keyword)    ;
+	
 };
 
 
