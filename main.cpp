@@ -155,32 +155,83 @@ int main()
 				cout << "you are not in anyone's profile!";
 			}
         }
-		/*
-        else if(command == "Add")
+	        else if(command == "Add")
         {
+        
+        string mail,name;
+        
+        //passing   
+          
+        char MAIL[70];
+	      char NAME[50];
 
+      	strcpy(MAIL,mail.c_str());
+	      strcpy(NAME,name.c_str());
+	      
+	      Add_Friend(Mail,Name);
+          
+              
         }
 		else if(command == "Accept")
 		{
+        string mail,name;
+        
+        //passing
+          
+        char MAIL[70];
+	      char NAME[50];
 
+      	strcpy(MAIL,mail.c_str());
+	      strcpy(NAME,name.c_str());
+	      
+	      Accept_Friend(Mail,Name);
 		}
         else if(command == "Reject")
         {
+          
+        string mail,name;
+        
+        //passing
+          
+        char MAIL[70];
+	      char NAME[50];
 
+      	strcpy(MAIL,mail.c_str());
+	      strcpy(NAME,name.c_str());
+	      
+	      Reject(Mail,Name);
+          
         }
         else if(command == "DeleteProfile")
         {
-
+        /*not ready*/
         }
         else if(command == "Post")
         {
-
+            string text;
+            //passing
+            
+            
+            
+            char TEXT[1000];
+            strcpy(TEXT,text.c_str());
+            Post(TEXT);
+            
         }
         else if(command == "Like")
         {
-
+          string id , mail;
+            //passing
+          
+          
+          int ID= stoi(id);
+          char MAIL[70];
+	        char NAME[50];
+          strcpy(MAIL,mail.c_str());
+            
+          Like_Post(ID, MAIL);
         }
-		*/
+		
         else if(command == "Switch")
         {
 			string role = user_input.substr(user_input.find(" ") + 1);
