@@ -1,7 +1,7 @@
 # CLI Design
 ## Structure to parse
 ```shell
-<command> <name> <additional_arguements>
+<command> <mail> <additional_arguements>
 (must)  (optional)  (optional)
 
 ```
@@ -10,89 +10,99 @@
 ### Notes:
 - "-"    stands for command
 - "="    stands for system interaction
-- "( )"  stands for an immediate action taken by the user
+- "( )"  stands for an update in the data
     
 ```shell
 - Register
 = please, register your info:
-Name: Mahmoud Hamdy
+Name: Mohamed Yehia
 Age: 23
-Mail: mahmoudhamdy.eeng@gmail.com
-Password: hakuna_matata
+Mail: mohamedyehia@gmail.com
+Password: 1234
 
 
 - Login
 = please, write your e-mail and password:
-Mail: mahmoudhamdy.eeng@gmail.com
+Mail: mohamedyehia@gmail.com
 Password: hakuna_matata
 
-
-- Search <name>
-- Search Mahmoud Hamdy
+- Logout
+(accout is logged out and we are redirected to home page)
 
 
 - ViewProfile <mail>
 - ViewProfile mody_nokta@yahoo.com
+(screen is cleared and profile pops up)
 
 
-- EditProfile <mail>
-- EditProfile mody_nokta@yahoo.com
-
-= Edit the info you want:
-Name: Amal Maher
-Mail: sekket_el_salama@yahoo.com
-Password: et2y_rbna_fya
-(pressing q to quit from edit mode)
-
-
-- BrowseFriends <user>
-- BrowseFriends current_profile_opened
+- EditProfile
+= please, enter your password first: 123456
+= what do you want to change ?
+- age
+= Enter the new age:
+- 27
+(profile is updated then pops up again)
 
 
-- ADD <mail>
-- ADD mody_nokta@yahoo.com
+- ViewRequests
+= name: Mostafa Tarek
+  mail: mostafatarek@gmail.com
+  
+  name: Ahmed Mahmoud
+  mailL ahmedmamhoud@yahoo.com
+  
+
+- BrowseFriends
+= name: Mostafa Tarek
+  mail: mostafatarek@gmail.com
+  
+  name: Ahmed Mahmoud
+  mail: ahmedmahmoud@yahoo.com
+  
+
+- ViewPosts
+  (all user's posts and his friends are printed)
 
 
-- Accept <mail>
-- Accept mody_nokta@yahoo.com
+- Add <mail> <name>
+- Add mostafatarek@gmail.com Mostafa Tarek
 
 
-- Reject <mail>
-- Reject mody_nokta@yahoo.com
+- Accept <mai> <name>
+- Accept mohamedyehia@gmail.com Mohamed Yehia
 
 
-- DeleteProfile
-= profile is deleted successfully
+- Reject <mail> <name>
+- Reject mohamedyehia@gmail.com Mohamed Yehia
+
 
 - Post
 = What's in your mind ?
-Know me no pain, no me know pain
-(pressing enter to quit text editing)
+- Know me no pain, no me know pain.
+  (all users posts pops up with the new post and each post is drawn in a frame)
+
+
+- Like <mail> <ID>
+= Like mohamedyehia@gmail.com 5
+  (post is liked and all posts are updated with the new likes)
 
 
 - Switch <role>
 - Switch Admin
-= Enter mail and password:
-Mail: mahmoudhamdy.eeng@gmail.com
-password: hakuna_msh_matata
+- Swtich User
+  (switching roles automatically logout from any logged in user)
+
+- home
+  (screen is cleared and all posts of the user and his friends appear on screen)
 
 
-- Switch User
-Note: nothing will be prompted, you must log in manually
-by using Login command, the software always stars as user mode
-so, nothing will be prompted unless you change to admin mode. 
+- help
+  (all system commands are printed on the screen)
 
 
-```
+- quit
+- exit
+  (software is closed)
 
-## These lines are still in design process:
-In home.txt:
-```shell
-- Like <mail> <id>
-- Like mody_nokta@yahoo.com 4
-```
-In profile.txt:
-```shell
-- Like <user> <id>
-- Like current_profile_opened 2
+
 ```
