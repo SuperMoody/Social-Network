@@ -1,7 +1,27 @@
-# Social-Network
+![Screenshot](Social_Network.jpg)
+
+### Content
+* [Overview](#overview)
+* [Specifications](#specifications)
+* [General Design](#general-design)
+* [CLI Design](#cli-design)
+* [How to use?](#how-to-use-)
+* [Our Team](#our-team)
+* [Contribution](#contribution)
+* [Author](#author)
+* [Licence](#licence)
+___
+
+## Overview
 Academic project based on applying Data Structures concepts by making a social network and being able to analyze frequent trends in it using C++ as a progrmmaning language.
 
-# General Design:
+___
+
+## Specifications
+
+___
+
+## General Design:
 - Interactive command line interface that support both admin and users’ functions
 - Admin Roles:
   * Add/Delete User
@@ -24,16 +44,17 @@ Academic project based on applying Data Structures concepts by making a social n
 - Repository is created for each user to save his basic data and profile.
 - Dat files are used to hold, save and load objects and data structures like xml files
 
+___
 
-# CLI Design
-## Structure to parse
+## CLI Design
+### Structure to parse
 ```shell
 <command> <mail> <additional_arguements>
 (must)  (optional)  (optional)
 
 ```
 
-## Examples:
+### Examples:
 ### Notes:
 - "-"    stands for command
 - "="    stands for system interaction
@@ -133,4 +154,30 @@ Password: hakuna_matata
 
 
 ```
+___
+
+## How to use?
+
+
+___
+
+## Our Team
+
+
+___
+
+## Contribution
+
+
+___
+
+## Author
+* [Mahmoud Hamdy](https://github.com/SuperMoody)
+
+___
+
+## Licence
+
+This project is licensed under the Apache 2.0 License - see the [LICENSE.md](https://github.com/SuperMoody/Social-Network/blob/master/LICENSE) file for details
+
 
