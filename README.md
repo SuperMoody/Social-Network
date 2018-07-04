@@ -5,7 +5,7 @@
 * [Specifications](#specifications)
 * [General Design](#general-design)
 * [CLI Design](#cli-design)
-* [How to use?](#how-to-use-)
+* [How to use?](#how-to-use)
 * [Our Team](#our-team)
 * [Contribution](#contribution)
 * [Author](#author)
@@ -19,6 +19,9 @@ ___
 
 ## Specifications
 
+* Development using **C/C++**
+* Development using **Visual Studio** under **Windows10** OS
+* Source controlling, Issues tracking and Documentation using ([Git](https://git-scm.com/)**/**[GitHub](https://github.com/))
 ___
 
 ## General Design:
@@ -158,26 +161,83 @@ ___
 
 ## How to use?
 
-
+* Check the [user manual](https://github.com/SuperMoody/Social-Network/blob/master/User_Manual.pdf)
 ___
 
 ## Our Team
 
-
+* [Mahmoud Hamdy](https://github.com/SuperMoody)
+* [mohamed-elfiky](https://github.com/mohamed-elfiky)
+* [Mahmoud Atef](https://github.com/mahmoudatef955)
 ___
 
 ## Contribution
 
+Anyone can contribute to this project in two conditions :
 
+### Forking 
+```Fork``` the project to your account and if you want to add your update , make a pull request
+
+### Committment to our coding style
+#### functions
+In .h files
+```bash
+<return_type> <function_identifier> (<parameters_list>);
+```
+
+In .cpp files (if it's not a class)
+```bash
+<return_type> <function_identifier> (<parameters_list>) //function header
+{
+    //statements 
+    //(function body)
+}
+```
+
+In .cpp files (if it's a class)
+```bash
+<return_type> <class_identifier>::<function_identifier> (<parameters_list>) //function header
+{
+    //statements 
+    //(function body)
+}
+```
+#### loops
+```bash
+for(<initialization> ; <condition> ; <increment>)
+{
+    //body
+}
+```
+```bash
+while(<condition>)
+{
+    //body
+}
+```
+```bash
+if(<condition>)
+{
+    //do something
+}
+else if(<condition>)
+{
+    //do something
+}
+else
+{
+    //do something
+}
+```
 ___
 
 ## Author
-* [Mahmoud Hamdy](https://github.com/SuperMoody)
 
+* [Mahmoud Hamdy](https://github.com/SuperMoody)
 ___
 
 ## Licence
 
 This project is licensed under the Apache 2.0 License - see the [LICENSE.md](https://github.com/SuperMoody/Social-Network/blob/master/LICENSE) file for details
-
+___
 
