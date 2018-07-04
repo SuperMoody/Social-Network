@@ -1,0 +1,17 @@
+Register
+Login
+Logout
+ViewProfile
+EditProfile
+BrowseFriends
+ViewRequests
+ViewPosts
+Add
+Accept
+Reject
+Post
+Like
+Switch
+help
+exit
+quit
