@@ -1,6 +1,30 @@
 # Social-Network
 Academic project based on applying Data Structures concepts by making a social network and being able to analyze frequent trends in it using C++ as a progrmmaning language.
 
+# General Design:
+- Interactive command line interface that support both admin and users’ functions
+- Admin Roles:
+  * Add/Delete User
+  * Browse User Profile/Friends
+  * Full Control of the system
+  
+- User Roles:
+  * Add Friend
+  * Send friend requests
+  * Accept/Reject friend requests
+  * Create a post
+  * Like posts
+  * Browse user profile/friends
+  * Edit his/her profile
+  * Login/Logout
+  * Switch roles
+  
+- The ability to change from user mode to admin mode and vice versa
+- Databases contain all information about users and used for social network analysis.
+- Repository is created for each user to save his basic data and profile.
+- Dat files are used to hold, save and load objects and data structures like xml files
+
+
 # CLI Design
 ## Structure to parse
 ```shell
@@ -109,3 +133,4 @@ Password: hakuna_matata
 
 
 ```
+
