@@ -59,9 +59,9 @@ ___
 
 ### Examples:
 ### Notes:
-- "-"    stands for command
-- "="    stands for system interaction
-- "( )"  stands for an update in the data
+- "-"    refers to us writing a command
+- "="    refers to the system interaction
+- "( )"  refers to an update in the system
     
 ```shell
 - Register
