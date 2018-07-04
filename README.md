@@ -178,7 +178,7 @@ Anyone can contribute to this project in two conditions :
 ### Forking 
 ```Fork``` the project to your account and if you want to add your update , make a pull request
 
-### Committment to our coding style
+### Committment to our coding style (Allman style)
 #### functions
 In .h files
 ```bash
