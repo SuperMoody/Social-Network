@@ -44,7 +44,7 @@ ___
   
 - The ability to change from user mode to admin mode and vice versa
 - Databases contain all information about users and used for social network analysis.
-- Repository is created for each user to save his basic data and profile.
+- Directory is created for each user to save his basic data and profile.
 - Dat files are used to hold, save and load objects and data structures like xml files
 
 ___
