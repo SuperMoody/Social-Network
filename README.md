@@ -161,12 +161,12 @@ ___
 
 ## How to use?
 
-* Check the [user manual](https://github.com/SuperMoody/Social-Network/blob/master/User_Manual.pdf)
+* Check the [user manual](https://github.com/SuperMoudy/Social-Network/blob/master/User_Manual.pdf)
 ___
 
 ## Our Team
 
-* [Mahmoud Hamdy](https://github.com/SuperMoody)
+* [Mahmoud Hamdy](https://github.com/SuperMoudy)
 * [mohamed-elfiky](https://github.com/mohamed-elfiky)
 * [Mahmoud Atef](https://github.com/mahmoudatef955)
 ___
@@ -231,13 +231,8 @@ else
 ```
 ___
 
-## Author
-
-* [Mahmoud Hamdy](https://github.com/SuperMoody)
-___
-
 ## Licence
 
-This project is licensed under the Apache 2.0 License - see the [LICENSE.md](https://github.com/SuperMoody/Social-Network/blob/master/LICENSE) file for details
+This project is licensed under the Apache 2.0 License - see the [LICENSE.md](https://github.com/SuperMoudy/Social-Network/blob/master/LICENSE) file for details
 ___
 
